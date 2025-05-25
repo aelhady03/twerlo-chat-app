@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twerlo Chat App</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Login/Register Section -->
+        <div id="auth-section" class="auth-container">
+            <div class="auth-card">
+                <h1>Twerlo Chat</h1>
+                <div class="auth-tabs">
+                    <button id="login-tab" class="tab-button active">Login</button>
+                    <button id="register-tab" class="tab-button">Register</button>
+                </div>
+                
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <input type="email" id="login-email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="login-password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                
+                <!-- Register Form -->
+                <form id="register-form" class="auth-form hidden">
+                    <div class="form-group">
+                        <input type="text" id="register-username" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="register-email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="register-password" placeholder="Password (min 6 chars)" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+                
+                <div id="auth-error" class="error-message"></div>
+            </div>
+        </div>
+
+        <!-- Chat Section -->
+        <div id="chat-section" class="chat-container hidden">
+            <div class="chat-header">
+                <h2>Twerlo Chat</h2>
+                <div class="user-info">
+                    <span id="current-user"></span>
+                    <button id="logout-btn" class="btn btn-secondary">Logout</button>
+                </div>
+            </div>
+            
+            <div class="chat-main">
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <div class="sidebar-section">
+                        <h3>Users</h3>
+                        <div id="users-list" class="users-list"></div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Online Users</h3>
+                        <div id="online-users" class="online-users"></div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Broadcast Messages</h3>
+                        <div id="broadcast-messages" class="broadcast-messages-list"></div>
+                    </div>
+                </div>
+                
+                <!-- Chat Area -->
+                <div class="chat-area">
+                    <div class="chat-header-info">
+                        <span id="chat-with">Select a user to start chatting</span>
+                    </div>
+                    
+                    <div id="messages-container" class="messages-container">
+                        <div id="messages" class="messages"></div>
+                    </div>
+                    
+                    <div class="message-input-container">
+                        <div class="message-input-row">
+                            <input type="file" id="file-input" accept="image/*,video/*,.pdf,.doc,.docx,.txt" style="display: none;">
+                            <button id="file-btn" class="btn btn-icon" title="Attach file">📎</button>
+                            <input type="text" id="message-input" placeholder="Type a message..." disabled>
+                            <button id="send-btn" class="btn btn-primary" disabled>Send</button>
+                        </div>
+                        <div class="message-options">
+                            <label>
+                                <input type="checkbox" id="broadcast-mode"> Broadcast message
+                            </label>
+                            <div id="broadcast-users" class="broadcast-users hidden">
+                                <p>Select users to send broadcast message:</p>
+                                <div id="broadcast-user-list" class="broadcast-user-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html> 
