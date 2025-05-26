@@ -29,7 +29,6 @@ docker compose up --build -d
 3. Access the application:
 
 - Web Interface: http://localhost:8080
-- API Base URL: http://localhost:8080/api
 
 ## ✅ Implemented Features
 

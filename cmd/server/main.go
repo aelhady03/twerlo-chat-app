@@ -56,7 +56,6 @@ func main() {
 	addr := fmt.Sprintf("%s:%s", cfg.Server.Host, cfg.Server.Port)
 	log.Printf("Server starting on %s", addr)
 	log.Printf("WebSocket endpoint: ws://%s/ws", addr)
-	log.Printf("API documentation available at: http://%s/api", addr)
 
 	if err := http.ListenAndServe(addr, routes); err != nil {
 		log.Fatalf("Server failed to start: %v", err)
